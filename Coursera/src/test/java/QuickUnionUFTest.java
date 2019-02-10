@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class UnionFindTest {
+public class QuickUnionUFTest {
+
     public static void main(String args[]) throws FileNotFoundException {
         File file = new File(
                 "/Users/Januj/Documents/GitHub/ProblemSolving/Coursera/src/main/resources/tinyUF" + ".txt");
@@ -12,14 +13,15 @@ public class UnionFindTest {
         StdIn.setScanner(scanner);
 
         int N = StdIn.readInt();
-        QuickFindUF quickFindUF = new QuickFindUF(N);
+        QuickUnionUF quickUnionUF = new QuickUnionUF(N);
 
         while (scanner.hasNext()) {
             int p = scanner.nextInt();
             int q = scanner.nextInt();
-            quickFindUF.union(p, q);
+            quickUnionUF.union(p, q);
         }
-        System.out.println("connected components----"+quickFindUF.count);
-        System.out.println(quickFindUF.connected(1, 9));
+        quickUnionUF.printIdArray();
+        System.out.println("connected components----"+quickUnionUF.count);
+        System.out.println(quickUnionUF.connected(1, 9));
     }
 }

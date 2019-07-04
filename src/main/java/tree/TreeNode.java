@@ -93,6 +93,35 @@ public class TreeNode {
         return n;
     }
 
+    public void insert(int d)
+    {
+        if(d<=data)
+        {
+            if(left==null)
+            {
+                setLeftChild(new TreeNode(d));
+            }
+            else
+            {
+                left.insert(d);
+            }
+        }
+        else
+        {
+            if(right==null)
+            {
+                setRightChild(new TreeNode(d));
+            }
+            else
+            {
+                right.insert(d);
+            }
+        }
+        size++;
+    }
+
+
+
     public static TreeNode createMinimalBST(int array[]) {
         return createMinimalBST(array, 0, array.length - 1);
     }

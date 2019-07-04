@@ -36,12 +36,12 @@ public class BTreePrinter {
             } else {
                 newNodes.add(null);
                 newNodes.add(null);
-                System.out.print(" ");
+                System.out.print("  ");
             }
 
             BTreePrinter.printWhitespaces(betweenSpaces);
         }
-        System.out.println("");
+        System.out.println("   ");
 
         for (int i = 1; i <= endgeLines; i++) {
             for (int j = 0; j < nodes.size(); j++) {
